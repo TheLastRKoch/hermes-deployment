@@ -1,0 +1,35 @@
+# IDE
+
+
+# Nginx logs
+*.log
+logs/
+access.log
+error.log
+
+# Nginx runtime files
+*.pid
+*.sock
+
+# Nginx configuration backups
+*.conf~
+*.conf.bak
+*.conf.old
+*.conf.save
+
+# SSL related
+*.crt
+*.key
+*.pem
+ssl/
+
+# Temporary files
+*.swp
+*~
+
+# Environment specific config
+conf.d/local/
+
+# System files
+.DS_Store
+Thumbs.db
