@@ -1,0 +1,28 @@
+version: '3'
+services:
+  devtoolkit:
+    image: thelastrkoch/devtoolkit:v1.0.0
+    container_name: devtoolkit
+    networks:
+      - rkdev
+    ports:
+      - "9000:8080"
+  gcp:
+    image: thelastrkoch/goals-championship-service:latest
+    container_name: gcp
+    networks:
+      - rkdev
+    ports:
+      - "9001:8080"
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./rknet-proxy.conf:/etc/nginx/conf.d/rknet-proxy.conf
+    networks:
+      - rkdev
+    ports:
+      - "80:80"
+
+networks:
+  rkdev:
